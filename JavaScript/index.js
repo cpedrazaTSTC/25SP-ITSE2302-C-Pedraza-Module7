@@ -2,7 +2,6 @@
 // 12/3/24
 // 24/FA ITSE 2302-7PDH2
 
-
 // the two ID's defined from purchasepage.html in order 
 // to fulfill the overall functionality of the logic (constant)
 const form = document.getElementById('orderform');
