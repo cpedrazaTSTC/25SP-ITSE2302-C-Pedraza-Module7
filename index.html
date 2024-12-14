@@ -17,80 +17,100 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Lato&display=swap" rel="stylesheet">
 
-	<!-- links to the js file --> 
+	<!-- links to the js file -->
 	<script src="JavaScript/index.js" async></script>
 </head>
 
 <body>
 	<header>
 		<nav>
+
+			<p
+				style="color: #B2BEB5; font-family: Charm, cursive; font-weight: 400; font-style: normal; font-size: 40px">
+				Crown Collar Co.</p>
+
 			<!-- allows for a custom nav -->
-			<div class="navlink1">
-				<!-- general font used throughout this website -->
-				<p style="color: #B2BEB5; font-family: Charm, cursive; font-weight: 400;font-style: normal">Crown Collar Co.</p>
-			</div>
-			<!-- allows for a custom nav -->
-			<div class="navlink2">
+			<!-- <div class="navlink2">
 				<a href="aboutus.html">About Us</a>
-			</div>
+			</div> -->
 			<!-- allows for a custom nav -->
-			<div class="navlink2">
+			<!-- <div class="navlink2">
 				<a href="contactus.html">Contact Us</a>
-			</div>
+			</div> -->
 		</nav>
 	</header>
 
 	<main>
-		<!-- section 1 is the parent of section 1 text, holding an image & text -->
-		<div class="section1">
-			<img src="Images/beigepolo.png" class="poloimgs" alt="beigepolo">
-			<div class="section1text">
-				<p>The beige-colored polo, one of Crown Collar's most exquisite and frequently purchased polos 
-				   	comes straight from the heart of London. Sourced from rich textiles and anti-itch technology,
-				   	this polo provides the user with comfort like never before.
-
-				   	<br><br>
-					
-					<!-- links to the checkout page -->
-				   	<a href="purchasepage.html">Purchase Now <img src="Images/shoppingcart.png" class="cartimg" alt="shoppingcart"></a>
-				</p>
-			</div>
+		<!-- contains the current selection of polos -->
+		<div class="poloselection">
+			<img src="Images/beigepolo.jpeg" class="poloimgs" alt="beigepolo">
+			<img src="Images/blackpolo.jpeg" class="poloimgs" alt="blackpolo">
+			<img src="Images/bluepolo.jpeg" class="poloimgs" alt="bluepolo">
 		</div>
 
-		<br>
-
-		<!-- section 2 is the parent of section 2 text, holding an image & text -->
-		<div class="section2">
-			<img src="Images/blackpolo.png" class="poloimgs" alt="blackpolo">
-			<div class="section2text">
-				<p>Also sourced from Europe is our black polo. Originating from the Italian countryside,
-				   	the native black elderberry plays a crucial role in the overall color of the shirt.
-
-					<br><br>
-
-					<!-- links to the checkout page -->
-					<a href="purchasepage.html">Purchase Now <img src="Images/shoppingcart.png" class="cartimg" alt="shoppingcart"></a>
-				</p>
+		<form id="orderform">
+			<!-- class thats applied to every div inside this form & its set property -->
+			<div class="formgroup">
+				<label for="name">Your Name:</label>
+				<input type="text" id="name" name="name" placeholder="Enter your name" required>
 			</div>
-		</div>
 
-		<br>
-
-		<!-- section 3 is the parent of section 3 text, holding an image & text -->
-		<div class="section3">
-			<img src="Images/bluepolo.png" class="poloimgs" alt="bluepolo">
-			<div class="section3text">
-				<p>Last but not least is the blue polo. With bright blue colors derived from the lands
-				   	of Sweden, its a popular choice amongt individuals looking for a casual but
-					rather professional look in their day-to-day life.
-
-					<br><br>
-
-					<!-- links to the checkout page -->
-					<a href="purchasepage.html">Purchase Now <img src="Images/shoppingcart.png" class="cartimg" alt="shoppingcart"></a>
-				</p>
+			<div class="formgroup">
+				<label for="email">Email Address:</label>
+				<input type="email" id="email" name="email" placeholder="Enter your email" required>
 			</div>
-		</div>
+
+			<div class="formgroup">
+				<label for="size">Select Your Polo Size:</label>
+				<div>
+					<label><input type="radio" name="size" value="Small" required> Small</label>
+					<label><input type="radio" name="size" value="Medium"> Medium</label>
+					<label><input type="radio" name="size" value="Large"> Large</label>
+				</div>
+			</div>
+
+			<div class="formgroup">
+				<label for="color">Color Preference:</label>
+				<div>
+					<label><input type="checkbox" name="color" value="Beige"> Beige</label>
+					<label><input type="checkbox" name="color" value="Black"> Black</label>
+					<label><input type="checkbox" name="color" value="Blue"> Blue</label>
+				</div>
+			</div>
+
+			<div class="formgroup">
+				<label for="quantity">Number of Polo T-Shirts:</label>
+				<input type="number" id="quantity" name="quantity" min="1" max="20" required>
+			</div>
+
+			<div class="formgroup">
+				<label for="cardNumber">Credit Card Number:</label>
+				<input type="tel" id="cardNumber" name="cardNumber" placeholder="Enter your credit card number"
+					pattern="\d{16}" required>
+			</div>
+
+			<div class="formgroup">
+				<label for="expDate">Expiration Date:</label>
+				<input type="text" id="expDate" name="expDate" placeholder="MM/YY" pattern="\d{2}/\d{2}" required>
+			</div>
+
+			<div class="formgroup">
+				<label for="cvv">CVV:</label>
+				<input type="number" id="cvv" name="cvv" placeholder="Enter CVV (3 digits)" min="100" max="999"
+					required>
+			</div>
+
+			<br>
+
+			<!-- class that centers the button tag slightly -->
+			<div class="btnconfig">
+				<button type="submit">Place Order</button>
+				<button type="reset">Reset</button>
+			</div>
+		</form>
+
+		<!-- id thats referenced in index.js -->
+		<div id="ordersum"></div>
 	</main>
 </body>
 </html>
