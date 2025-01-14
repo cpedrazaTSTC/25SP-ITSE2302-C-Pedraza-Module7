@@ -40,20 +40,20 @@ form.addEventListener('submit', (event) => {
 
 	// checks if a valid quantity is provided (#3)
 	let isValidQuantity = true;
-	// (#4)
+	// if statement (#4)
 	if (quantity < 1 || quantity > 20) {
 		isValidQuantity = false;
 		alert('Quantity must be between 1 and 20.');
 		return;
 	}
 
-	// gets selected colors with the use of an empty array (#5)
+	// constant that gets selected colors with the use of an empty array (#5)
 	const selectedColors = [];
 	document.querySelectorAll('input[name="color"]:checked').forEach(color => {
 		selectedColors.push(color.value);
 	});
 
-	// ensures at least one color is selected
+	// if statement that ensures at least one color is selected
 	if (selectedColors.length === 0) {
 		alert('Please select at least one color.');
 		return;
@@ -70,7 +70,7 @@ form.addEventListener('submit', (event) => {
 	// checks to see if everything is ready to display
 	let isReadyToDisplay = true;
 
-	// checks for an invalid shirt size (ghost code + proves functionality) (#6)
+	// switch that checks for an invalid shirt size (#6)
 	switch (size) {
 		case 'Small':
 		case 'Medium':
@@ -82,9 +82,9 @@ form.addEventListener('submit', (event) => {
 			return;
 	}
 
-	// displays the order summary and catches any errors (#7)
+	// try catch that displays the order summary and reports any errors (#7)
 	try {
-		// if else checking for errors then displaying the order summary if everything runs correctly (#8)
+		// if else that checks for errors then displaying the order summary if everything runs correctly (#8)
 		if (isReadyToDisplay && isValidQuantity) {
 			displayOrderSummary({
 				name,
